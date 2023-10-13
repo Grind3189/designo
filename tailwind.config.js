@@ -43,7 +43,7 @@ export default {
         'world-class-lg': "url('/src/assets/about/desktop/image-world-class-talent.jpg')",
         'real-deal-sm': "url('/src/assets/about/mobile/image-real-deal.jpg')",
         'real-deal-md': "url('/src/assets/about/tablet/image-real-deal.jpg')",
-        'real-deal-lg': "url('/src/assets/about/desktop/image-real-deal.jpg')",
+        'real-deal-lg': "url('/src/assets/about/desktop/image-real-deal.jpg')"
       }
 
     },

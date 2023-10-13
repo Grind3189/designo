@@ -2,10 +2,24 @@ import logo from "../../assets/shared/desktop/logo-dark.png";
 import hamburgerIc from "../../assets/shared/mobile/icon-hamburger.svg";
 import closeIc from "../../assets/shared/mobile/icon-close.svg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if( window.innerWidth >= 768 ) {
+        setShowNav(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+    window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const toggleNav = () => {
     setShowNav((prev) => !prev);
@@ -36,7 +50,7 @@ const Header = () => {
       </div>
 
       <nav
-        className={`bottom-0 left-0 right-0 top-[95px] transition-all max-md:fixed md:visible md:translate-x-0 md:opacity-100 ${
+        className={`bottom-0 left-0 right-0 top-[95px] z-50 transition-all max-md:fixed md:visible md:translate-x-0 md:opacity-100 ${
           showNav
             ? "visible translate-x-0 opacity-100"
             : "invisible translate-x-1/2 opacity-0"

@@ -3,7 +3,7 @@ import Map from "../components/locations/Map";
 function Locations() {
   return (
     <section className="flex flex-col gap-10">
-      <div className="flex flex-col md:gap-[31px] xl:flex-row-reverse">
+      <div className="flex flex-col md:gap-[31px] xl:flex-row-reverse z-0">
         <Map latitude={43.644148256268615} longitude={-79.39452867383888} location="canada" />
         <Details
           country="Canada"

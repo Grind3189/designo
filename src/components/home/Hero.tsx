@@ -16,7 +16,7 @@ const Hero = () => {
           Find out more about our services.
         </p>
         <Link
-          to=""
+          to="web-design"
           className="text-black-100 mx-auto grid h-[56px] w-[152px] place-items-center rounded-lg bg-[#FFFFFF] font-medium uppercase tracking-[1px] xl:mx-0 lg:hover:bg-peach-100 lg:hover:text-[#fff]"
         >
           Learn More

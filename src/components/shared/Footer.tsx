@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/shared/desktop/logo-light.png";
 import SocMedFooter from "./SocMedFooter";
 import ctaBgPattern from "../../assets/shared/desktop/bg-pattern-call-to-action.svg";
 
 const Footer = () => {
+  const location = useLocation()
+  const isContactUs = location.pathname === '/contact-us'
   return (
-    <footer className="relative mt-[311px] bg-black-200 px-6 pb-16 pt-[290px] text-[#fff] md:mt-[372px] md:px-[39px] md:pb-20 md:pt-[140px] xl:pb-[72px]">
-      <div className="absolute left-0 right-0 top-[-190px] md:top-[-260px] xl:top-[-205px]">
+    <footer className={`relative bg-black-200 px-6 pb-16 ${isContactUs ? "pt-16 md:pt-20 xl:pt-[72px] mt-0" : "pt-[290px] md:pt-[140px] mt-[311px] md:mt-[372px]"}  text-[#fff] md:px-[39px] md:pb-20 xl:pb-[72px]`}>
+     {!isContactUs && <div className="absolute left-0 right-0 top-[-190px] md:top-[-260px] xl:top-[-205px]">
         <div
           className={`relative mx-auto flex w-[327px] flex-col gap-8 overflow-hidden rounded-[15px] bg-peach-200 px-6 py-16 text-center
             md:w-[690px] xl:w-[1111px] xl:flex-row xl:items-center xl:justify-between xl:px-[95px] xl:py-[72px] xl:text-left`}
@@ -23,7 +25,7 @@ const Footer = () => {
           </div>
           <div className="z-10">
             <Link
-              to=""
+              to="contact-us"
               className="inline-block rounded-lg bg-[#fff] px-[19px] py-[17px] font-medium text-black-200 lg:hover:bg-peach-100 lg:hover:text-[#fff]"
             >
               GET IN TOUCH
@@ -36,15 +38,15 @@ const Footer = () => {
             className="absolute left-[40px] scale-[2.5] md:left-0 md:top-0 md:scale-[1.7] xl:left-[230px] xl:top-[-150px] xl:scale-100"
           />
         </div>
-      </div>
+      </div>}
 
       <div className="mb-10 flex flex-col items-center justify-center gap-8 md:relative md:flex-row md:justify-between md:pb-10 xl:mx-auto xl:w-[1111px]">
         <img src={logo} alt="image of our logo" className="h-[27px]" />
         <div className="w-full border-t border-t-black-100 md:absolute md:bottom-0" />
         <div className="flex flex-col gap-8 text-center text-[14px] uppercase tracking-[2px] md:flex-row">
-          <Link to="">Our Company</Link>
-          <Link to="">Locations</Link>
-          <Link to="">Contact</Link>
+          <Link to="about-us" className="lg:hover:text-peach-200">Our Company</Link>
+          <Link to="locations" className="lg:hover:text-peach-200">Locations</Link>
+          <Link to="contact-us" className="lg:hover:text-peach-200">Contact</Link>
         </div>
       </div>
 

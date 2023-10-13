@@ -7,6 +7,7 @@ import AppDesign from "./pages/AppDesign";
 import GraphicDesign from "./pages/GraphicDesign";
 import AboutUs from "./pages/AboutUs";
 import Locations from "./pages/Locations";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
         <Route path="graphic-design" element={<GraphicDesign />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="locations" element={<Locations />} />
+        <Route path="contact-us" element={<ContactUs />} />
       </Route>
     </Routes>
   );
