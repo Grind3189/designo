@@ -21,9 +21,6 @@ const Map = ({latitude, longitude, location}: MapProp) => {
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
-      L.marker([latitude, longitude]).addTo(
-        map,
-      );
     };
     getMap();
   }, []);
